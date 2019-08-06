@@ -1,18 +1,15 @@
-def display_board(board)
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts "-----------"
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts "-----------"
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
-end
+#!/usr/bin/env ruby
 
-# code your input_to_index and move method here!
-def input_to_index(input)
-  input = input.strip.to_i - 1
-  return input
-end
+require_relative '../lib/move.rb'
 
- def move(array, index, value= "X")
-  array[index] = value
-  return array
-end
+# Code your CLI Here
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+puts "Please enter 1-9:"
+input = gets.strip
+
+index = input_to_index(input)
+
+move(board, index)
+display_board(board)
